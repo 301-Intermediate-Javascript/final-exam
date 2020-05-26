@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="/favorites">My Favorites</a>
+            </li>
+        </ul>
+    </nav>
+    <ul>
+        <% pokemon.forEach(value=>{ %>
+            <li>
+                <form action="/add" method="POST">
+            <h2><%= value.name %></h2>
+            <input type="hidden" name="poke" value="<%= value.name %>">
+            <input type="submit" value="Add to Favorites">
+        </form>
+            </li>
+
+        <% }) %>
+    </ul>
+</body>
+</html>

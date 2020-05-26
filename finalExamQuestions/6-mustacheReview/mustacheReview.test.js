@@ -10,7 +10,8 @@ CHALLENGE 1 - Review
 
 Use the characters data below for all of the challenges except challenge 2.
 
-Write a function named templatingWithMustache that uses mustache to create the markup templates for each of the characters. Use the snippet as your guide for creating your templates. Return an array of template strings. Note: this function does not need to actually append the markup to the DOM. 
+Write a function named templatingWithMustache that uses mustache to create the markup templates for each of the characters. Use the snippet as your guide for creating your templates. 
+Return an array of template strings. Note: this function does not need to actually append the markup to the DOM. 
 
 ------------------------------------------------------------------------------------------------ */
 let characters = [
@@ -69,6 +70,15 @@ let $ = createSnippetWithJQuery(`
 
 const templatingWithMustache = () => {
   // Solution code here...
+  const array =[];
+  characters.forEach(value => {
+    console.log(value.children)
+    let template = $('body').html();
+    let rendered = Mustache.render(template, {name: value.name, spouse: value.spouse, children: value.children, house: value.house})
+    array.push(rendered)
+  })
+  console.log(array);
+  return array;
 }
 
 describe('Testing challenge', () => {

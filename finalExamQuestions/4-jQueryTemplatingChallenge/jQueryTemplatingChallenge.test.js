@@ -33,7 +33,7 @@ const starWars = {
     ]}
   }}
 
-$ = createSnippetWithJQuery(`
+let $ = createSnippetWithJQuery(`
 <main>
   <section id="template">
     <h2></h2>
@@ -45,6 +45,16 @@ $ = createSnippetWithJQuery(`
 
 const templatingWithJQuery = () => {
   // Solution code here ...
+  console.log(starWars.keyPlayers.force.light[0])
+  const starwars = starWars.keyPlayers.force.light.forEach(value =>{
+   const section = (`<section><h2>${value.name}</h2><h3>${value.height}</h3><p>${value.eye_color}</p></section>`)
+    // $('h2').text(value.name);
+    // $('h3').text(value.height);
+    // $('p').text(value.eye_color);
+    $('main').append(section);
+  })
+
+console.log(starwars);
 }
 
 describe('Testing challenge', () => {
